@@ -21,7 +21,7 @@
     "githubURL": "IWEB-UPM/P1_el_tiempo",
     "serverUrl": "https://aat.dit.upm.es/",
     "courseId": "396",
-    "assignmentId": "39931"
+    "assignmentId": "491"
   },
   "scripts": {
     "start": "react-scripts start",
