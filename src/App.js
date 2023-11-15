@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <Header />
       <h2 id="titulo"><b>El tiempo</b></h2>
-      <div>Latitud:<input id="latitud" type="number" placeholder={latitud} value={latitud} onChange={e=>setLatitud(e.target.value)}/></div>
+      <div>Latitud:<input id="latitud" type="number" placeholder={latitud} value={latitud} onChange={e=>setLatitud(e.target.value)}/></div> {/* Importante que el value es el estado, no el default */}
       <div>Longitud:<input id="longitud" type="number" placeholder={longitud} value={longitud} onChange={e=>setLongitud(e.target.value)}/></div>
       <div><button id="buscar">Buscar</button></div>
     </div>
