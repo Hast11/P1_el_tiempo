@@ -4,6 +4,7 @@ import Resultados from './Resultados';
 import Header from './Header';
 import {useState} from 'react';
 import CONFIG from './config/config';
+import { mock1 } from './constants/users';
 
 const USE_SERVER = CONFIG.use_server;
 const url = CONFIG.server_url;
@@ -16,6 +17,16 @@ function App() {
 
   const [latitud, setLatitud] = useState(defaultLat)
   const [longitud, setLongitud] = useState(defaultLon);
+  const [resultado, setResultado] = useState(null);
+
+  const callServer = async (param) => {
+    if(USE_SERVER){
+
+    }
+    else{
+      setResultado(mock1);
+    }
+  }
 
   return (
     <div className="App">
