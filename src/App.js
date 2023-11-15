@@ -56,8 +56,8 @@ function App() {
       <h2 id="titulo"><b>El tiempo</b></h2>
       <div>Latitud:<input id="latitud" type="number" placeholder={latitud} value={latitud} onChange={e=>setLatitud(e.target.value)}/></div> {/* Importante que el value es el estado, no el default */}
       <div>Longitud:<input id="longitud" type="number" placeholder={longitud} value={longitud} onChange={e=>setLongitud(e.target.value)}/></div>
-      <div><button id="buscar">Buscar</button></div>
-      {(resultado && aux) && <Resultados numitems={CONFIG.num_items} items={resultado}/>}
+      <div><button id="buscar" onClick={()=>callServer()}>Buscar</button></div>
+      {(resultado && aux) && <Resultados numItems={CONFIG.num_items} items={resultado}/>}
       {!aux && <Error error={resultado}/>}
     </div>
   );
