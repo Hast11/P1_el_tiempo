@@ -25,17 +25,17 @@ function App() {
     if(USE_SERVER){
       try{
         let queryparams ="";
-        queryparams ="?lat=" + latitud + "&lon=" + longitud + "&appid=" + CONFIG.api_key;
-        const response = await fetch(`${url}${queryparams}`);
-        if (Response.status===200){
+        queryparams = "?lat=" + latitud + "&lon=" + longitud + "&appid=" + CONFIG.api_key;
+        const response = await fetch(`${CONFIG.server_url}${queryparams}`);
+        if (response.status===200){
           aux = true;
           const data = await response.json(); 
           setResultado(data);
         }
         else{
-          aux = false;
           const data = await response.json(); 
           setResultado(data);
+          aux = false;
           <Error/>
         }
       }
@@ -57,7 +57,7 @@ function App() {
       <div>Latitud:<input id="latitud" type="number" placeholder={latitud} value={latitud} onChange={e=>setLatitud(e.target.value)}/></div> {/* Importante que el value es el estado, no el default */}
       <div>Longitud:<input id="longitud" type="number" placeholder={longitud} value={longitud} onChange={e=>setLongitud(e.target.value)}/></div>
       <div><button id="buscar" onClick={()=>callServer()}>Buscar</button></div>
-      {(resultado && aux) && <Resultados numItems={CONFIG.num_items} items={resultado}/>}
+      {(resultado && aux) && <Resultados numitems={numItems} items={resultado}/>}
       {!aux && <Error error={resultado}/>}
     </div>
   );
