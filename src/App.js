@@ -16,6 +16,10 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <h2 id="titulo"><b>El Tiempo</b></h2>
+      <div>Latitud: <input id="latitud" placeholder={defaultLat}></input></div>
+      <div>Longitud: <input id="longitud" placeholder={defaultLon}></input></div>
+      <div><button id="buscar">Buscar</button></div>
     </div>
   );
 }
